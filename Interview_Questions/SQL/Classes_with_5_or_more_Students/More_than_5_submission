@@ -1,0 +1,12 @@
+# Write your MySQL query statement below
+select c.course_name as class
+from 
+(select 
+class as course_name,
+count(student) as student_counts
+from Courses 
+group by class) c
+where c.student_counts >= 5
+
+Runtime: 258 ms, faster than 82.59% of MySQL online submissions for Classes More Than 5 Students.
+Memory Usage: 0B, less than 100.00% of MySQL online submissions for Classes More Than 5 Students.
